@@ -1,27 +1,27 @@
+var elements;
 if (document.readyState !== 'loading') {
-    console.log('document is already ready, just execute code here');
-    myInitCode();
-} else {
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('document was not ready, place code here');
-        myInitCode();
-    });
+    elements = document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href], ul[id*="nav"] li');
+    // for (var i = 0; i < elements.length; i++) {
+    //     elements[i].style.backgroundColor = 'yellow';
+    // }
 }
 
-function myInitCode() {
+document.addEventListener('keydown', keydownEvent);
+function keydownEvent(event) {
+    const keyword = event.key;
+    highlight(keyword);
+}
 
-        console.log("Test!");
+function highlight(keyword) {
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        const elementInnerText = element.innerText.toLowerCase();
 
-
-        Array.prototype.forEach.call(document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href]'), function (element) {
-            element.style.background = "green";
-        })
-        //
-        // var a = document.getElementsByTagName("nav");
-        // a
-        //
-        // .style.background = "pink")
-        // console.log(abc);
-        // abc.body.style.background = "pink";
-
+        if (elementInnerText.startsWith(keyword.toLowerCase())) {
+            element.style.backgroundColor = 'orange';
+        }
+        else {
+            element.style.backgroundColor = '';
+        }
+    }
 }

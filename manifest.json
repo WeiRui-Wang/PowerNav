@@ -1,19 +1,20 @@
 {
   "manifest_version": 3,
   "name": "PowerNav",
-  "version": "0.1.0",
-  "description": "Facilitates navigation for accessibility and power user",
+  "version": "0.2.0",
+  "description": "Facilitates navigation for accessibility user and poweruser",
   "permissions": [
     "activeTab",
     "tabs"
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["content_scripts.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_scripts.js"
+      ]
     }
   ]
 }
