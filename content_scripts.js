@@ -29,7 +29,6 @@ function highlight(keyword) {
     for (let i = 0; i < elements.length; i++) {
         const element = elements[i];
         const elementInnerText = element.innerText.toLowerCase();
-
         if (elementInnerText.startsWith(keyword.toLowerCase())) {
             element.style.backgroundColor = getGradientColor(elements.length, i);
         }
