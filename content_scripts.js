@@ -13,8 +13,8 @@ function myInitCode() {
         console.log("Test!");
 
 
-        Array.prototype.forEach.call(document.getElementsByTagName("nav"), function (element) {
-            element.style.background = "pink";
+        Array.prototype.forEach.call(document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href]'), function (element) {
+            element.style.background = "green";
         })
         //
         // var a = document.getElementsByTagName("nav");
