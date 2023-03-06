@@ -26,7 +26,7 @@ function highlight(keyword) {
         const elementInnerText = element.innerText.toLowerCase();
         if (elementInnerText.startsWith(keyword.toLowerCase())) {
             element.style.backgroundColor = 'orange';
-            if (!firstElement) {
+            if (!firstElement && element.checkVisibility()) {
                 firstElement = element;
             }
         }
