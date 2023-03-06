@@ -16,7 +16,6 @@ function keydownEvent(event) {
     if (event.key === 'Enter' && matchedElement) {
         keyword = '';
         matchedElement.click();
-        console.log('clicked fired' + matchedElement);
     }
 }
 
@@ -36,7 +35,6 @@ function highlight(keyword) {
         }
     }
     if (firstElement) {
-        console.log(firstElement);
         firstElement.focus();
         matchedElement = firstElement;
     }
