@@ -3,10 +3,6 @@
   "name": "PowerNav",
   "version": "0.3.0",
   "description": "Facilitates navigation for accessibility user and poweruser",
-  "permissions": [
-    "activeTab",
-    "tabs"
-  ],
   "content_scripts": [
     {
       "matches": [

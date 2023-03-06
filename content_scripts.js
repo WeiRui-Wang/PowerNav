@@ -1,9 +1,9 @@
 var elements;
 if (document.readyState !== 'loading') {
     elements = document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href], ul[id*="nav"] li');
-    // for (var i = 0; i < elements.length; i++) {
-    //     elements[i].style.backgroundColor = 'yellow';
-    // }
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = 'yellow';
+    }
 }
 
 var keyword = '';
