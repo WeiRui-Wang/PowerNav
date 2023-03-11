@@ -1,24 +1,30 @@
-const KEYUP_TIMEOUT_LENGTH = 456;
+const KEYUP_TIMEOUT_LENGTH = 500;
 const TARGET_TIMEOUT_LENGTH = KEYUP_TIMEOUT_LENGTH * 2;
 
-var elements;
+var targetElements;
 
 window.addEventListener("load", (event) => {
-    elements = document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href], ul[id*="nav"] li a[href]');
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = 'yellow';
+    targetElements = document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href], ul[id*="nav"] li a[href]');
+    for (var i = 0; i < targetElements.length; i++) {
+        targetElements[i].style.backgroundColor = 'yellow';
     };
 });
 
 
+
 var keyword = '';
 var matchedElement;
+var matched = false;
 
 document.addEventListener('keydown', keydownEvent);
 function keydownEvent(event) {
     if (event.keyCode == 32 || (event.keyCode >= 65 && event.keyCode <= 90)) {
         keyword += event.key;
-        highlight(keyword);
+        if (matched) {
+            highlight(keyword, matchedElement);
+        } else {
+            highlight(keyword, targetElements);
+        }
     }
     if (event.key === 'Enter' && matchedElement) {
         keyword = '';
@@ -27,15 +33,23 @@ function keydownEvent(event) {
 }
 
 let timeout;
+let targetTimeout;
 document.addEventListener('keyup', keyupEvent);
 function keyupEvent(event) {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
         keyword = '';
+        matched = true;
     }, KEYUP_TIMEOUT_LENGTH);
+    clearTimeout(targetTimeout);
+    targetTimeout = setTimeout(() => {
+        matchedElement = null;
+        matched = false;
+        keyword = '';
+    }, TARGET_TIMEOUT_LENGTH);
 }
 
-function highlight(keyword) {
+function highlight(keyword, elements) {
     var firstElement;
     if (!elements) {
         return;
