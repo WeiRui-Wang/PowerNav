@@ -25,7 +25,6 @@ function keydownEvent(event) {
     }
 }
 
-
 let timeout;
 document.addEventListener('keyup', keyupEvent);
 function keyupEvent(event) {
@@ -36,7 +35,6 @@ function keyupEvent(event) {
 }
 
 function highlight(keyword) {
-    console.log('keyword', keyword);
     var firstElement;
     if (!elements) {
         return;
