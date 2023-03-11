@@ -1,26 +1,46 @@
+const TIMEOUT_LENGTH = 456;
+
 var elements;
-if (document.readyState !== 'loading') {
+
+window.addEventListener("load", (event) => {
     elements = document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href], ul[id*="nav"] li a[href]');
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.backgroundColor = 'yellow';
-    }
-}
+    };
+});
+
 
 var keyword = '';
 var matchedElement;
 
 document.addEventListener('keydown', keydownEvent);
 function keydownEvent(event) {
-    keyword += event.key;
-    highlight(keyword);
+    if (event.keyCode == 32 || (event.keyCode >= 65 && event.keyCode <= 90)) {
+        keyword += event.key;
+        highlight(keyword);
+    }
     if (event.key === 'Enter' && matchedElement) {
         keyword = '';
         matchedElement.click();
     }
 }
 
+
+let timeout;
+document.addEventListener('keyup', keyupEvent);
+function keyupEvent(event) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        keyword = '';
+    }, TIMEOUT_LENGTH);
+}
+
 function highlight(keyword) {
+    console.log('keyword', keyword);
     var firstElement;
+    if (!elements) {
+        return;
+    }
     for (let i = 0; i < elements.length; i++) {
         const element = elements[i];
         const elementInnerText = element.innerText.toLowerCase();
