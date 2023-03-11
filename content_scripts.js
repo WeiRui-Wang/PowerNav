@@ -1,4 +1,5 @@
-const TIMEOUT_LENGTH = 456;
+const KEYUP_TIMEOUT_LENGTH = 456;
+const TARGET_TIMEOUT_LENGTH = KEYUP_TIMEOUT_LENGTH * 2;
 
 var elements;
 
@@ -31,7 +32,7 @@ function keyupEvent(event) {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
         keyword = '';
-    }, TIMEOUT_LENGTH);
+    }, KEYUP_TIMEOUT_LENGTH);
 }
 
 function highlight(keyword) {
