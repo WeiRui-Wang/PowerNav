@@ -3,7 +3,7 @@
   "name": "PowerNav",
   "version": "1.0.0",
   "description": "Facilitate navigation with keyboard for accessibility user and power user",
-  "icon": {
+  "icons": {
     "128": "default_icon.png"
   },
   "action": {
