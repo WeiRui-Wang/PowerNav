@@ -1,6 +1,6 @@
 # PowerNav
 
-A lightweight extension for accessibility and power users by using dynamic navigation elements common pattern matching across vairous websites.
+A lightweight extension for accessibility and power users by using dynamic navigation elements common pattern matching across various websites.
 
 PowerNav is a Chrome extension that enhances website navigation for accessibility and power users. The extension allows users to define search patterns for specific types of elements on a web page, such as links, buttons, or form fields. When activated, PowerNav searches the page for matching elements and highlights them.
 
