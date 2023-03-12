@@ -11,7 +11,7 @@ var targetElements;
 window.addEventListener("load", (event) => {
     targetElements = document.querySelectorAll('a[href][class*="nav"], section[class*="bar"] a[href], div[class*="nav"] a[href], li a[href], ul[id*="nav"] li a[href]');
     for (var i = 0; i < targetElements.length; i++) {
-        targetElements[i].style.backgroundColor = 'yellow';
+        // targetElements[i].style.backgroundColor = 'yellow';
     };
 });
 
@@ -57,7 +57,7 @@ function keyupEvent(event) {
         keyword = '';
         matched = true;
     }, KEYUP_TIMEOUT_LENGTH);
-    // Clear the timeout for target element event
+    // Clear the timeout for target matched state
     clearTimeout(targetTimeout);
     // Set a new timeout to reset the matched element and keyword
     targetTimeout = setTimeout(() => {
@@ -78,14 +78,14 @@ function highlight(keyword, elements) {
         const elementInnerText = element.innerText.toLowerCase();
         if (elementInnerText.startsWith(keyword.toLowerCase())) {
             // Change the background color to orange if there's a match
-            element.style.backgroundColor = 'orange';
+            // element.style.backgroundColor = 'orange';
             if (!firstElement && element.checkVisibility()) {
                 firstElement = element;
             }
         }
         else {
             // Change the background color to yellow if there's no match
-            element.style.backgroundColor = 'yellow';
+            // element.style.backgroundColor = 'yellow';
         }
     }
     // Focus on the first matching element and store it as matchedElement
