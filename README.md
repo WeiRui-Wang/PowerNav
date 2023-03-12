@@ -1,6 +1,6 @@
 # PowerNav
 
-The extension allows users to quickly navigate to and interact with elements on a website, enhancing accessibility and productivity for power users.
+The extension allows users to quickly navigate to and interact with elements on a website, enhancing the productivity for accessibility and power users.
 
 ![PowerNav](https://user-images.githubusercontent.com/58345470/224559818-0e99decc-59e0-4c9d-a240-b80bd0ed9c25.gif)
 
