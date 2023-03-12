@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PowerNav",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Lightweight extension facilitate navigation for accessibility user and power user",
   "content_scripts": [
     {

@@ -1,8 +1,8 @@
 // Timeout length for keyup event
-const KEYUP_TIMEOUT_LENGTH = 500;
+const KEYUP_TIMEOUT_LENGTH = 456;
 
 // Timeout length for target element matching sliding window
-const TARGET_TIMEOUT_LENGTH = 1000;
+const TARGET_TIMEOUT_LENGTH = 789;
 
 // Store all the target elements
 var targetElements;
@@ -25,6 +25,10 @@ var matched = false;
 // Handle keydown events
 document.addEventListener('keydown', keydownEvent);
 function keydownEvent(event) {
+    // Check if current focus is on a text input field or text area to prevent unintended navigation
+    if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'textarea') {
+        return;
+    }
     // Only take character keys
     if (event.keyCode == 32 || (event.keyCode >= 65 && event.keyCode <= 90)) {
         // Append the key to the keyword
