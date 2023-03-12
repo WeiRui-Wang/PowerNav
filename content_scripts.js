@@ -1,8 +1,8 @@
 // Timeout length for keyup event
-const KEYUP_TIMEOUT_LENGTH = 321;
+const KEYUP_TIMEOUT_LENGTH = 456;
 
 // Timeout length for target element matching sliding window
-const TARGET_TIMEOUT_LENGTH = 654;
+const TARGET_TIMEOUT_LENGTH = 789;
 
 // Store all the target elements
 var targetElements;

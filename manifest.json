@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "PowerNav",
   "version": "1.0.0",
-  "description": "Lightweight extension facilitate navigation for accessibility user and power user",
+  "description": "Facilitate navigation with keyboard for accessibility user and power user",
   "content_scripts": [
     {
       "matches": [
