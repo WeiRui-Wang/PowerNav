@@ -4,7 +4,7 @@ PowerNav allows users to quickly navigate to and interact with navigation menu e
 
 PowerNav is a Chrome extension designed to facilitate efficient and accessible web navigation using keyboard inputs. By searching for, highlighting, and navigating to page elements based on user-entered keywords, PowerNav enhances the browsing experience for power users and individuals who rely on keyboard navigation due to accessibility requirements.
 
-Usage
+### Usage
 
 Once installed, PowerNav automatically begins functioning on all web pages, targeting elements such as links within sections, divs, lists, or any other element that has a "nav" in its class or ID. When a user starts typing, the tool looks for elements that start with the entered keyword.
 
@@ -16,11 +16,11 @@ The following keyboard events are of importance:
 
 Please note that PowerNav ignores keystrokes when focus is on text input fields or text areas to prevent unintended navigation. Also, the tool ignores modifier keys (Alt, Ctrl, Meta, Shift).
 
-Timeouts
+#### Timeouts
 
 PowerNav uses timeouts to reset the keyword and matched element. If a key isn't pressed within 456 milliseconds, the keyword is reset. Similarly, if no matching element is found within 789 milliseconds, the matched element state is reset.
 
-Visual Feedback
+### Visual Feedback
 
 In the current version of the script, visual feedback (changing the background color of the matched elements) is commented out. However, if uncommented, it will highlight all potential navigation targets in yellow and the currently matched element in orange. This can provide an easier visual reference to users.
 
@@ -38,4 +38,6 @@ Note: This tool is designed for accessibility and power users and may require a 
 
 PowerNav enhances website navigation for accessibility and power users. The extension allows users to search button text and automatically focus on the element. When activated, PowerNav searches the page for matching elements and user can quickly navigate within the webpage.
 
+![Screenshot 2023-05-15 161940](https://github.com/WeiRui-Wang/PowerNav/assets/58345470/ce8b8f72-b898-4e30-a013-ad02e9d3352c)
+![Screenshot 2023-05-15 155638](https://github.com/WeiRui-Wang/PowerNav/assets/58345470/69eed723-df31-40bb-adaf-c62941250776)
 ![Screenshots](https://user-images.githubusercontent.com/58345470/224576474-853a89bd-06e3-46a2-9504-ac19e3e15a6a.png)
